@@ -117,10 +117,12 @@ input, textarea { font: inherit; }
   padding: 36px 8% 48px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 320ms var(--ease);
+  transform: translateX(100%);
+  transition: opacity 420ms var(--ease), transform 520ms var(--ease);
 }
 .menu-overlay.open {
   opacity: 1;
+  transform: translateX(0);
   pointer-events: auto;
 }
 
@@ -193,7 +195,11 @@ input, textarea { font: inherit; }
   opacity: 1;
   transform: translateY(0);
 }
-.menu-overlay__links a:hover { color: var(--wine); }
+.menu-overlay.open .menu-overlay__links a:hover {
+  color: var(--wine);
+  transform: translateY(-6px) scale(1.06);
+  transition: color 180ms var(--ease), transform 260ms var(--ease);
+}
 .menu-overlay__links a:hover .ix { color: var(--wine); opacity: 1; }
 .menu-overlay__links a.is-current {
   color: var(--wine);
