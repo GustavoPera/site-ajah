@@ -123,6 +123,24 @@
     }
   }
 
+  /* --- page transition: intercepta links internos --- */
+  var curtain = document.querySelector(".page-curtain");
+  if (curtain) {
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) === "#" || href.indexOf("http") === 0 || href.indexOf("mailto") === 0 || href.indexOf("tel") === 0) return;
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var dest = href;
+        closeMenu();
+        curtain.classList.add("leaving");
+        curtain.addEventListener("animationend", function () {
+          window.location.href = dest;
+        }, { once: true });
+      });
+    });
+  }
+
   /* --- gallery touch toggle (mobile / tap on desktop) --- */
   document.querySelectorAll(".gallery__item").forEach(function (item) {
     item.addEventListener("click", function (e) {
