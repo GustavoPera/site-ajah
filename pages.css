@@ -298,6 +298,13 @@
   width: auto;
   display: block;
   flex-shrink: 0;
+  transition: transform 320ms var(--ease), filter 320ms var(--ease);
+  cursor: default;
+}
+.logo-ticker__group img:hover {
+  transform: scale(1.14);
+  /* converte preto → vinho #740808 */
+  filter: invert(12%) sepia(90%) saturate(2000%) hue-rotate(342deg) brightness(87%);
 }
 @keyframes logoScroll {
   from { transform: translateX(0); }
