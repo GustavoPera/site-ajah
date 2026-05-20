@@ -14,7 +14,7 @@
   --serif: "Playfair Display", "Times New Roman", serif;
   --sans:  "Inter", "Helvetica Neue", Arial, sans-serif;
 
-  --header-h: 148px;
+  --header-h: 200px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
