@@ -181,12 +181,15 @@
   position: relative;
   background: var(--black);
   min-height: 240vh;
+  overflow: hidden;
 }
 .expand__pin {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   height: 100vh;
-  overflow: hidden;
+  will-change: transform;
   display: flex;
   align-items: center;
   justify-content: center;

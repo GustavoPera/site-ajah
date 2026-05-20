@@ -91,35 +91,44 @@
   /* --- scroll-expand story: fase 1 cresce, fase 2 encolhe + frase aparece --- */
   var expandSections = document.querySelectorAll(".expand");
   if (expandSections.length) {
-    function sm(x) { return x * x * (3 - 2 * x); } // smoothstep ease
+    function sm(x) { return x * x * (3 - 2 * x); }
 
     function updateExpandStory() {
+      var scrollY = window.scrollY || window.pageYOffset;
+
       expandSections.forEach(function (section) {
+        var pin    = section.querySelector(".expand__pin");
         var frame  = section.querySelector(".expand__frame");
         var phrase = section.querySelector(".expand__phrase");
-        if (!frame) return;
+        if (!pin || !frame) return;
 
-        var rect    = section.getBoundingClientRect();
-        var scrolled = -rect.top;
-        var total    = section.offsetHeight - window.innerHeight;
+        var sectionTop = section.offsetTop;
+        var sectionH   = section.offsetHeight;
+        var winH       = window.innerHeight;
+        var total      = sectionH - winH;
         if (total <= 0) return;
-        var p  = Math.max(0, Math.min(1, scrolled / total));
 
-        var p1  = Math.min(p * 2, 1);          // 0→1 na primeira metade
-        var p2  = Math.max((p - 0.5) * 2, 0);  // 0→1 na segunda metade
+        // Simula sticky: pin desce junto com o scroll para parecer fixo na tela
+        var scrolled = scrollY - sectionTop;
+        var pinY = Math.max(0, Math.min(total, scrolled));
+        pin.style.transform = "translateY(" + pinY + "px)";
+
+        var p   = Math.max(0, Math.min(1, scrolled / total));
+        var p1  = Math.min(p * 2, 1);
+        var p2  = Math.max((p - 0.5) * 2, 0);
         var ep1 = sm(p1);
         var ep2 = sm(p2);
 
         // Imagem: cresce 0.38→1 (fase 1), encolhe 1→0.22 e desce (fase 2)
         var fs = p2 > 0 ? (1 - 0.78 * ep2) : (0.38 + 0.62 * ep1);
-        var fy = ep2 * 26; // vh para baixo
+        var fy = ep2 * 26;
         frame.style.transform =
           "translate(-50%, calc(-50% + " + fy.toFixed(2) + "vh)) scale(" + fs.toFixed(3) + ")";
 
-        // Frase: sobe para -14vh acima do centro e cresce em opacidade
+        // Frase: aparece e sobe (fase 2)
         if (phrase) {
           phrase.style.opacity = ep2.toFixed(3);
-          var py = 3 - ep2 * 17; // vh: começa 3vh abaixo do centro, termina 14vh acima
+          var py = 3 - ep2 * 17;
           phrase.style.transform =
             "translate(-50%, calc(-50% + " + py.toFixed(2) + "vh))";
         }
