@@ -28,12 +28,14 @@
     if (!overlay) return;
     overlay.classList.add("open");
     document.body.classList.add("menu-open");
+    document.documentElement.classList.add("menu-open");
     overlay.setAttribute("aria-hidden", "false");
   }
   function closeMenu() {
     if (!overlay) return;
     overlay.classList.remove("open");
     document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
     overlay.setAttribute("aria-hidden", "true");
   }
   if (openBtn) openBtn.addEventListener("click", openMenu);

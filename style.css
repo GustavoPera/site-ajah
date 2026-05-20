@@ -267,6 +267,7 @@ a.menu-overlay__contact:hover { color: var(--wine); }
 }
 
 /* lock scroll when menu open */
+html.menu-open,
 body.menu-open { overflow: hidden; }
 
 /* ============================================================
