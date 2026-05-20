@@ -88,56 +88,39 @@
     updateRotate();
   }
 
-  /* --- scroll-expand story: fase 1 cresce, fase 2 encolhe + frase aparece --- */
-  var expandSections = document.querySelectorAll(".expand");
-  if (expandSections.length) {
-    function sm(x) { return x * x * (3 - 2 * x); }
-
-    function updateExpandStory() {
-      var scrollY = window.scrollY || window.pageYOffset;
-
-      expandSections.forEach(function (section) {
-        var pin    = section.querySelector(".expand__pin");
-        var frame  = section.querySelector(".expand__frame");
-        var phrase = section.querySelector(".expand__phrase");
-        if (!pin || !frame) return;
-
-        var sectionTop = section.offsetTop;
-        var sectionH   = section.offsetHeight;
-        var winH       = window.innerHeight;
-        var total      = sectionH - winH;
-        if (total <= 0) return;
-
-        // Simula sticky: pin desce junto com o scroll para parecer fixo na tela
-        var scrolled = scrollY - sectionTop;
-        var pinY = Math.max(0, Math.min(total, scrolled));
-        pin.style.transform = "translateY(" + pinY + "px)";
-
-        var p   = Math.max(0, Math.min(1, scrolled / total));
-        var p1  = Math.min(p * 2, 1);
-        var p2  = Math.max((p - 0.5) * 2, 0);
-        var ep1 = sm(p1);
-        var ep2 = sm(p2);
-
-        // Imagem: cresce 0.38→1 (fase 1), encolhe 1→0.22 e desce (fase 2)
-        var fs = p2 > 0 ? (1 - 0.78 * ep2) : (0.38 + 0.62 * ep1);
-        var fy = ep2 * 26;
-        frame.style.transform =
-          "translate(-50%, calc(-50% + " + fy.toFixed(2) + "vh)) scale(" + fs.toFixed(3) + ")";
-
-        // Frase: aparece e sobe (fase 2)
-        if (phrase) {
-          phrase.style.opacity = ep2.toFixed(3);
-          var py = 3 - ep2 * 17;
-          phrase.style.transform =
-            "translate(-50%, calc(-50% + " + py.toFixed(2) + "vh))";
-        }
-      });
+  /* --- scroll-expand image frames --- */
+  var expandFrames = document.querySelectorAll(".expand__frame");
+  var isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (expandFrames.length) {
+    if (isMobile) {
+      var mio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            mio.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      expandFrames.forEach(function (f) { mio.observe(f); });
+    } else {
+      function updateExpand() {
+        var vh = window.innerHeight;
+        expandFrames.forEach(function (f) {
+          var r = f.getBoundingClientRect();
+          var center = r.top + r.height / 2;
+          var dist = Math.abs(center - vh / 2);
+          var max = vh * 0.85;
+          var p = 1 - dist / max;
+          if (p < 0) p = 0;
+          if (p > 1) p = 1;
+          p = p * p * (3 - 2 * p);
+          f.style.setProperty("--p", p.toFixed(3));
+        });
+      }
+      window.addEventListener("scroll", updateExpand, { passive: true });
+      window.addEventListener("resize", updateExpand);
+      updateExpand();
     }
-
-    window.addEventListener("scroll", updateExpandStory, { passive: true });
-    window.addEventListener("resize", updateExpandStory);
-    updateExpandStory();
   }
 
   /* --- contact form: envio AJAX + modal de sucesso --- */
