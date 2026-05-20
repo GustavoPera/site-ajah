@@ -1480,7 +1480,14 @@ a.contact__info-value:hover { color: var(--wine); }
   margin: 56px 0 18px;
   align-items: stretch;
 }
-.newsletter__form-wrap { display: flex; flex-direction: column; gap: 0; margin: 56px 0 18px; }
+.newsletter__form-wrap { display: flex; flex-direction: column; gap: 0; margin: 32px 0 18px; }
+
+/* newsletter page — centralizar textos e reduzir espaçamentos */
+[data-page="newsletter"] .page-hero { padding-bottom: clamp(40px, 6vw, 80px); }
+[data-page="newsletter"] .page-hero__headline { text-align: center; max-width: 100%; }
+[data-page="newsletter"] .page-hero__sub { text-align: center; margin: 16px auto 0; }
+[data-page="newsletter"] .page-hero__crumbs { justify-content: center; }
+[data-page="newsletter"] .newsletter { padding-top: clamp(32px, 4vw, 56px); }
 .newsletter__form--name { margin: 0; }
 .newsletter__btn {
   background: var(--wine);
