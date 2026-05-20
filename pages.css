@@ -1510,6 +1510,9 @@ a.contact__info-value:hover { color: var(--wine); }
 }
 .nwl-sub strong { font-weight: 500; color: var(--cream); }
 
+/* campos mais compactos */
+[data-page="newsletter"] .newsletter__form input { padding: 10px 0; }
+
 /* placeholders itálicos e leves */
 [data-page="newsletter"] .newsletter__form input::placeholder {
   font-style: italic;
