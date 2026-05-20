@@ -1484,11 +1484,21 @@ a.contact__info-value:hover { color: var(--wine); }
 
 /* newsletter page — centralizar textos e reduzir espaçamentos */
 [data-page="newsletter"] .page-hero { padding-bottom: clamp(80px, 10vw, 140px); }
-[data-page="newsletter"] .page-hero__headline { text-align: center; max-width: 100%; }
-[data-page="newsletter"] .page-hero__sub { text-align: center; margin: 16px auto 0; }
-[data-page="newsletter"] .page-hero__crumbs { justify-content: center; }
-[data-page="newsletter"] .newsletter__form-wrap { max-width: 720px; margin: 32px auto 18px; }
-[data-page="newsletter"] .newsletter__note { text-align: center; }
+
+.nwl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: center;
+}
+.nwl-grid__text { display: flex; flex-direction: column; gap: 24px; }
+.nwl-grid__form { display: flex; flex-direction: column; }
+[data-page="newsletter"] .newsletter__form-wrap { margin: 0 0 16px; }
+[data-page="newsletter"] .newsletter__note { margin-top: 12px; }
+
+@media (max-width: 768px) {
+  .nwl-grid { grid-template-columns: 1fr; gap: 48px; }
+}
 .newsletter__form--name { margin: 0; }
 .newsletter__btn {
   background: var(--wine);
