@@ -189,6 +189,34 @@
     form.appendChild(p);
   }
 
+  /* --- hero headline: embaralhar letra ao hover --- */
+  var scrambleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&!';
+  document.querySelectorAll('.hero__headline .ltr').forEach(function (ltr) {
+    var original = ltr.textContent;
+    var timer = null;
+    var count = 0;
+    var total = 10;
+    if (!original.trim() || original === '.' || original === ',') return;
+    ltr.addEventListener('mouseenter', function () {
+      if (timer) clearInterval(timer);
+      count = 0;
+      timer = setInterval(function () {
+        count++;
+        if (count >= total) {
+          ltr.textContent = original;
+          clearInterval(timer);
+          timer = null;
+        } else {
+          ltr.textContent = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+        }
+      }, 35);
+    });
+    ltr.addEventListener('mouseleave', function () {
+      if (timer) { clearInterval(timer); timer = null; }
+      ltr.textContent = original;
+    });
+  });
+
   /* --- gallery touch toggle (mobile / tap on desktop) --- */
   document.querySelectorAll(".gallery__item").forEach(function (item) {
     item.addEventListener("click", function (e) {
