@@ -1909,6 +1909,7 @@ a.contact__info-value:hover { color: var(--wine); }
 }
 .gallery__item:hover { filter: brightness(1.05); }
 .gallery__item.touched { filter: brightness(1.05); }
+.gallery__item[data-img]::before { display: none; }
 .gallery__item::before {
   content: "[ Imagem ]";
   position: absolute;
