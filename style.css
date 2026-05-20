@@ -198,7 +198,8 @@ input, textarea { font: inherit; }
 .menu-overlay.open .menu-overlay__links a:hover {
   color: var(--wine);
   transform: translateY(-6px) scale(1.06);
-  transition: color 180ms var(--ease), transform 260ms var(--ease);
+  transition: color 120ms var(--ease), transform 160ms var(--ease);
+  transition-delay: 0ms;
 }
 .menu-overlay__links a:hover .ix { color: var(--wine); opacity: 1; }
 .menu-overlay__links a.is-current {
