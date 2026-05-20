@@ -1291,6 +1291,38 @@ a.contact__info-value:hover { color: var(--wine); }
   .contact__grid { grid-template-columns: 1fr; }
 }
 
+.contact__success {
+  padding: 56px 0;
+}
+.contact__success-rule {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--wine);
+  margin-bottom: 32px;
+}
+.contact__success-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 56px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.contact__success-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray);
+  max-width: 44ch;
+}
+.contact__error {
+  font-size: 14px;
+  color: var(--wine);
+  margin-top: 18px;
+  letter-spacing: 0.02em;
+}
+
 /* ============================================================
    NEWSLETTER PAGE
    ============================================================ */

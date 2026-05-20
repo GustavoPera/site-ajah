@@ -123,6 +123,51 @@
     }
   }
 
+  /* --- contact form: envio AJAX sem redirecionar (Formspree) --- */
+  var contactForm = document.querySelector(".contact__form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = contactForm.querySelector("button[type='submit']");
+      var originalText = btn.innerHTML;
+      btn.innerHTML = "Enviando <span class='arrow'>…</span>";
+      btn.disabled = true;
+
+      fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { "Accept": "application/json" }
+      })
+      .then(function (res) {
+        if (res.ok) {
+          contactForm.innerHTML =
+            "<div class='contact__success'>" +
+            "<span class='contact__success-rule'></span>" +
+            "<p class='contact__success-title'>Mensagem recebida.</p>" +
+            "<p class='contact__success-sub'>Respondemos em até 2 dias úteis — por quem assina o projeto, não por SDR.</p>" +
+            "</div>";
+        } else {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          showContactError(contactForm);
+        }
+      })
+      .catch(function () {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        showContactError(contactForm);
+      });
+    });
+  }
+
+  function showContactError(form) {
+    if (form.querySelector(".contact__error")) return;
+    var p = document.createElement("p");
+    p.className = "contact__error";
+    p.textContent = "Algo deu errado. Escreva direto para contato@ajah.com";
+    form.appendChild(p);
+  }
+
   /* --- gallery touch toggle (mobile / tap on desktop) --- */
   document.querySelectorAll(".gallery__item").forEach(function (item) {
     item.addEventListener("click", function (e) {
