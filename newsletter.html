@@ -54,36 +54,18 @@
           <a href="index.html">Início</a><span class="sep">/</span><span class="here">Newsletter</span>
         </div>
         <h1 class="page-hero__headline fade-up">Para quem leva marca <em style="font-style:italic;color:var(--wine);">a sério.</em></h1>
-        <p class="page-hero__sub fade-up">Conteúdo sobre marca, estratégia e o que a Ajah está construindo. Sem frequência prometida — só quando vale o seu tempo.</p>
+        <p class="page-hero__sub fade-up" style="color:var(--cream);">Toda <strong style="color:var(--cream);">sexta-feira</strong> você recebe um conteúdo exclusivo sobre branding, marketing, negócios e o que move marcas que constroem comunidades reais. Sem enrolação — só o que vale o seu tempo.</p>
       </div>
     </section>
 
     <section class="newsletter" aria-label="Inscrição">
       <div class="newsletter__wrap">
-        <!-- TODO: conectar action a Mailchimp / ConvertKit / Buttondown / Netlify Forms -->
-        <form class="newsletter__form fade-up" action="#" method="post" name="newsletter">
+        <form class="newsletter__form newsletter__form--stack fade-up" action="#" method="post" name="newsletter">
+          <input type="text" name="nome" placeholder="Seu nome ou organização" required aria-label="Nome" />
           <input type="email" name="email" placeholder="seu@email.com" required aria-label="Email" />
-          <button type="submit">Entrar <span aria-hidden="true">→</span></button>
+          <button type="submit">Quero receber <span aria-hidden="true">→</span></button>
         </form>
-        <p class="newsletter__note">Sem spam. Só conteúdo que vale o seu tempo.</p>
-
-        <div class="newsletter__topics">
-          <div class="topic fade-up">
-            <div class="topic__num">01</div>
-            <h3 class="topic__title">O que <em style="font-style:italic;">a maioria</em> chama de marca.</h3>
-            <p class="topic__body">Análises diretas de marcas que confundem decoração com estratégia — e o que o mercado faz com elas.</p>
-          </div>
-          <div class="topic fade-up">
-            <div class="topic__num">02</div>
-            <h3 class="topic__title">Estudos de <em style="font-style:italic;">caso reais.</em></h3>
-            <p class="topic__body">Recortes de projetos da Ajah e de marcas que admiramos — o que funcionou, o que não, e o que aprendemos no meio do caminho.</p>
-          </div>
-          <div class="topic fade-up">
-            <div class="topic__num">03</div>
-            <h3 class="topic__title">As <em style="font-style:italic;">perguntas</em> que ninguém quer responder.</h3>
-            <p class="topic__body">Provocações estratégicas curtas, sem checklist, sem framework reciclado. Só o que vale ser dito.</p>
-          </div>
-        </div>
+        <p class="newsletter__note" style="color:var(--cream);">Toda sexta-feira, direto no seu email. Sem spam.</p>
       </div>
     </section>
 

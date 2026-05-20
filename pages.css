@@ -1480,6 +1480,20 @@ a.contact__info-value:hover { color: var(--wine); }
   margin: 56px 0 18px;
   align-items: stretch;
 }
+/* layout vertical para dois campos */
+.newsletter__form--stack {
+  flex-direction: column;
+  border-bottom: none;
+  gap: 0;
+}
+.newsletter__form--stack input {
+  border-bottom: 1px solid rgba(173,159,130,0.4);
+}
+.newsletter__form--stack button {
+  margin-top: 32px;
+  align-self: center;
+  padding: 18px 48px;
+}
 .newsletter__form input {
   flex: 1;
   background: transparent;
@@ -1491,7 +1505,7 @@ a.contact__info-value:hover { color: var(--wine); }
   padding: 18px 0;
   letter-spacing: 0.02em;
 }
-.newsletter__form input::placeholder { color: var(--gray); }
+.newsletter__form input::placeholder { color: rgba(245,244,242,0.45); }
 .newsletter__form button {
   background: var(--wine);
   color: var(--cream);
