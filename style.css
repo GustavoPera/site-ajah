@@ -114,7 +114,7 @@ input, textarea { font: inherit; }
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  padding: 56px 8% 48px;
+  padding: 80px 8% 48px;
   pointer-events: none;
   /* círculo com origem no botão hamburger (canto superior direito) */
   clip-path: circle(0% at calc(100% - 60px) 74px);
@@ -131,7 +131,8 @@ input, textarea { font: inherit; }
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: calc(var(--header-h) - 36px);
+  height: auto;
+  padding-bottom: 16px;
 }
 .menu-overlay__logo {
   height: 84px;
