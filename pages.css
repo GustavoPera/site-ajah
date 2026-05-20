@@ -115,7 +115,7 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 700;
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(22px, 3vw, 42px);
   color: var(--cream);
   line-height: 1.15;
   text-align: center;
@@ -129,6 +129,12 @@
   margin-top: 18px;
   line-height: 1.7;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .hero__inner { padding: 0 22px; gap: 18px; }
+  .hero__tagline { white-space: normal; text-wrap: balance; font-size: clamp(20px, 5.5vw, 32px); }
+  .hero__lede { font-size: 15px; }
+  .hero__headline { font-size: clamp(40px, 13vw, 80px); }
 }
 .hero__corner-meta {
   position: absolute;
