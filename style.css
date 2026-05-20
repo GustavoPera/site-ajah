@@ -70,8 +70,8 @@ input, textarea { font: inherit; }
   height: 100%;
 }
 .brand-mark img {
-  height: 128px;
-  width: 128px;
+  height: 150px;
+  width: 150px;
   display: block;
   transition: transform 400ms var(--ease);
 }
@@ -255,7 +255,7 @@ a.menu-overlay__contact:hover { color: var(--wine); }
 }
 @media (max-width: 768px) {
   .menu-overlay {
-    padding: 24px 22px 32px;
+    padding: 64px 22px 32px;
     clip-path: circle(0% at calc(100% - 40px) 48px);
   }
   .menu-overlay.open {
