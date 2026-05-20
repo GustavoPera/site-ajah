@@ -162,7 +162,12 @@ input, textarea { font: inherit; }
   width: 100%;
   padding: 32px 0;
   transform: translateY(-3vh);
+  overflow-y: auto;
+  min-height: 0;
 }
+.menu-overlay__links::-webkit-scrollbar { width: 3px; }
+.menu-overlay__links::-webkit-scrollbar-track { background: transparent; }
+.menu-overlay__links::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 2px; }
 .menu-overlay__links a {
   font-family: var(--serif);
   font-weight: 700;
