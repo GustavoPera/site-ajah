@@ -217,6 +217,15 @@
     });
   });
 
+  /* --- neon border: segue o mouse nas imagens --- */
+  document.querySelectorAll(".expand__frame, .statement__image").forEach(function (el) {
+    el.addEventListener("mousemove", function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+      el.style.setProperty("--my", ((e.clientY - r.top)  / r.height * 100).toFixed(1) + "%");
+    });
+  });
+
   /* --- gallery touch toggle (mobile / tap on desktop) --- */
   document.querySelectorAll(".gallery__item").forEach(function (item) {
     item.addEventListener("click", function (e) {

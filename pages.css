@@ -203,6 +203,34 @@
   background-position: center;
 }
 .expand__frame[data-img] { background-image: var(--img); }
+
+/* neon border tracking */
+.expand__frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 2px;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(240, 40, 40, 1),
+    rgba(180, 10, 10, 0.45) 35%,
+    transparent 62%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 350ms ease;
+  pointer-events: none;
+  z-index: 6;
+}
+.expand__frame:hover::before { opacity: 1; }
+
 .expand__frame::after {
   content: "";
   position: absolute;
@@ -342,7 +370,35 @@
 
 .statement__image {
   margin: 40px 0 0;
+  position: relative;
 }
+.statement__image::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 2px;
+  border-radius: 4px;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(240, 40, 40, 1),
+    rgba(180, 10, 10, 0.45) 35%,
+    transparent 62%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 350ms ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.statement__image:hover::before { opacity: 1; }
+
 .statement__image img {
   display: block;
   width: 100%;
