@@ -114,7 +114,7 @@ input, textarea { font: inherit; }
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  padding: 80px 8% 48px;
+  padding: 120px 8% 48px;
   pointer-events: none;
   /* círculo com origem no botão hamburger (canto superior direito) */
   clip-path: circle(0% at calc(100% - 60px) 74px);
@@ -255,7 +255,7 @@ a.menu-overlay__contact:hover { color: var(--wine); }
 }
 @media (max-width: 768px) {
   .menu-overlay {
-    padding: 64px 22px 32px;
+    padding: 90px 22px 32px;
     clip-path: circle(0% at calc(100% - 40px) 48px);
   }
   .menu-overlay.open {
