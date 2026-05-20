@@ -1480,9 +1480,25 @@ a.contact__info-value:hover { color: var(--wine); }
   margin: 56px 0 18px;
   align-items: stretch;
 }
-.newsletter__form-wrap { display: flex; flex-direction: column; gap: 0; }
-.newsletter__form--name { margin: 56px 0 0; }
-.newsletter__form--name + .newsletter__form { margin-top: 0; }
+.newsletter__form-wrap { display: flex; flex-direction: column; gap: 0; margin: 56px 0 18px; }
+.newsletter__form--name { margin: 0; }
+.newsletter__btn {
+  background: var(--wine);
+  color: var(--cream);
+  padding: 18px 48px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 32px;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 220ms var(--ease), gap 220ms var(--ease);
+}
+.newsletter__btn:hover { background: var(--cream); color: var(--black); gap: 18px; }
 .newsletter__form input {
   flex: 1;
   background: transparent;

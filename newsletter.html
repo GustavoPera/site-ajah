@@ -60,15 +60,15 @@
 
     <section class="newsletter" aria-label="Inscrição">
       <div class="newsletter__wrap">
-        <div class="newsletter__form-wrap fade-up">
+        <form class="newsletter__form-wrap fade-up" action="#" method="post" name="newsletter">
           <div class="newsletter__form newsletter__form--name">
             <input type="text" name="nome" placeholder="Seu nome ou organização" required aria-label="Nome" />
           </div>
-          <form class="newsletter__form" action="#" method="post" name="newsletter">
+          <div class="newsletter__form">
             <input type="email" name="email" placeholder="seu@email.com" required aria-label="Email" />
-            <button type="submit">Quero receber <span aria-hidden="true">→</span></button>
-          </form>
-        </div>
+          </div>
+          <button class="newsletter__btn" type="submit">Quero receber <span aria-hidden="true">→</span></button>
+        </form>
         <p class="newsletter__note" style="color:var(--cream);">Toda sexta-feira, direto no seu email. Sem spam.</p>
       </div>
     </section>
