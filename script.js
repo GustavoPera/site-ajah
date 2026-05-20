@@ -123,9 +123,30 @@
     }
   }
 
-  /* --- contact form: envio AJAX sem redirecionar (Formspree) --- */
+  /* --- contact form: envio AJAX + modal de sucesso --- */
   var contactForm = document.querySelector(".contact__form");
-  if (contactForm) {
+  var formModal   = document.getElementById("form-modal");
+
+  if (contactForm && formModal) {
+    var modalClose = formModal.querySelector(".form-modal__close");
+
+    function openModal() {
+      formModal.classList.add("open");
+      formModal.setAttribute("aria-hidden", "false");
+    }
+    function closeModal() {
+      formModal.classList.remove("open");
+      formModal.setAttribute("aria-hidden", "true");
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    formModal.addEventListener("click", function (e) {
+      if (e.target === formModal) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = contactForm.querySelector("button[type='submit']");
@@ -140,16 +161,12 @@
       })
       .then(function (res) {
         return res.json().then(function (data) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
           if (res.ok) {
-            contactForm.innerHTML =
-              "<div class='contact__success'>" +
-              "<span class='contact__success-rule'></span>" +
-              "<p class='contact__success-title'>Mensagem recebida.</p>" +
-              "<p class='contact__success-sub'>Respondemos em até 2 dias úteis — por quem assina o projeto, não por SDR.</p>" +
-              "</div>";
+            contactForm.reset();
+            openModal();
           } else {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
             var msg = (data && data.error) ? data.error : "Erro desconhecido";
             showContactError(contactForm, msg);
           }

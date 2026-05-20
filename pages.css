@@ -1291,36 +1291,78 @@ a.contact__info-value:hover { color: var(--wine); }
   .contact__grid { grid-template-columns: 1fr; }
 }
 
-.contact__success {
-  padding: 56px 0;
+.contact__error {
+  font-size: 14px;
+  color: var(--wine);
+  margin-top: 18px;
+  letter-spacing: 0.02em;
 }
-.contact__success-rule {
+
+/* --- modal de sucesso --- */
+.form-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 360ms var(--ease);
+}
+.form-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.form-modal__box {
+  background: var(--black);
+  color: var(--cream);
+  padding: 56px 64px;
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+  transform: translateY(28px);
+  transition: transform 440ms var(--ease);
+  border-left: 3px solid var(--wine);
+}
+.form-modal.open .form-modal__box {
+  transform: translateY(0);
+}
+.form-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 28px;
+  font-weight: 200;
+  font-family: var(--serif);
+  color: var(--gray);
+  transition: color 200ms var(--ease), transform 200ms var(--ease);
+}
+.form-modal__close:hover { color: var(--wine); transform: rotate(90deg); }
+.form-modal__rule {
   display: block;
   width: 48px;
   height: 3px;
   background: var(--wine);
   margin-bottom: 32px;
 }
-.contact__success-title {
+.form-modal__title {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(28px, 3.6vw, 48px);
   letter-spacing: -0.02em;
   line-height: 1.05;
-  color: var(--black);
+  color: var(--cream);
   margin-bottom: 16px;
 }
-.contact__success-sub {
-  font-size: 17px;
+.form-modal__sub {
+  font-size: 16px;
   line-height: 1.7;
   color: var(--gray);
-  max-width: 44ch;
 }
-.contact__error {
-  font-size: 14px;
-  color: var(--wine);
-  margin-top: 18px;
-  letter-spacing: 0.02em;
+@media (max-width: 768px) {
+  .form-modal__box { padding: 40px 28px; }
 }
 
 /* ============================================================
