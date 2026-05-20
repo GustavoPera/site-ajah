@@ -118,9 +118,8 @@
   font-size: clamp(24px, 3vw, 42px);
   color: var(--cream);
   line-height: 1.15;
-  max-width: 22ch;
   text-align: center;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 .hero__lede {
   font-family: var(--sans);
