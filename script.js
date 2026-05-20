@@ -139,32 +139,36 @@
         headers: { "Accept": "application/json" }
       })
       .then(function (res) {
-        if (res.ok) {
-          contactForm.innerHTML =
-            "<div class='contact__success'>" +
-            "<span class='contact__success-rule'></span>" +
-            "<p class='contact__success-title'>Mensagem recebida.</p>" +
-            "<p class='contact__success-sub'>Respondemos em até 2 dias úteis — por quem assina o projeto, não por SDR.</p>" +
-            "</div>";
-        } else {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          showContactError(contactForm);
-        }
+        return res.json().then(function (data) {
+          if (res.ok) {
+            contactForm.innerHTML =
+              "<div class='contact__success'>" +
+              "<span class='contact__success-rule'></span>" +
+              "<p class='contact__success-title'>Mensagem recebida.</p>" +
+              "<p class='contact__success-sub'>Respondemos em até 2 dias úteis — por quem assina o projeto, não por SDR.</p>" +
+              "</div>";
+          } else {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            var msg = (data && data.error) ? data.error : "Erro desconhecido";
+            showContactError(contactForm, msg);
+          }
+        });
       })
-      .catch(function () {
+      .catch(function (err) {
         btn.innerHTML = originalText;
         btn.disabled = false;
-        showContactError(contactForm);
+        showContactError(contactForm, err.message || "Falha de rede");
       });
     });
   }
 
-  function showContactError(form) {
-    if (form.querySelector(".contact__error")) return;
+  function showContactError(form, detail) {
+    var existing = form.querySelector(".contact__error");
+    if (existing) existing.remove();
     var p = document.createElement("p");
     p.className = "contact__error";
-    p.textContent = "Algo deu errado. Escreva direto para contato@ajah.com";
+    p.textContent = "Erro: " + (detail || "tente novamente ou escreva para contato@ajah.com");
     form.appendChild(p);
   }
 
