@@ -229,6 +229,7 @@
   /* --- gallery touch toggle (mobile / tap on desktop) --- */
   document.querySelectorAll(".gallery__item").forEach(function (item) {
     item.addEventListener("click", function (e) {
+      e.preventDefault();
       document.querySelectorAll(".gallery__item.touched").forEach(function (o) {
         if (o !== item) o.classList.remove("touched");
       });
