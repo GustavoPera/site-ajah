@@ -278,24 +278,25 @@
 /* ---------------- LOGO TICKER ---------------- */
 .logo-ticker {
   background: var(--cream);
-  padding: 28px 0;
+  padding: 32px 0;
   overflow: hidden;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 .logo-ticker__inner {
   display: flex;
-  align-items: center;
-  gap: 64px;
-  white-space: nowrap;
   width: max-content;
-  animation: logoScroll 28s linear infinite;
+  animation: logoScroll 30s linear infinite;
 }
-.logo-ticker__inner img {
-  height: 36px;
+.logo-ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding-right: 72px;
+  flex-shrink: 0;
+}
+.logo-ticker__group img {
+  height: 56px;
   width: auto;
   display: block;
-  opacity: 0.22;
   flex-shrink: 0;
 }
 @keyframes logoScroll {
