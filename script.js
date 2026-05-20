@@ -88,39 +88,47 @@
     updateRotate();
   }
 
-  /* --- scroll-expand image frames --- */
-  const expandFrames = document.querySelectorAll(".expand__frame");
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  if (expandFrames.length) {
-    if (isMobile) {
-      const mio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            mio.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25 });
-      expandFrames.forEach(function (f) { mio.observe(f); });
-    } else {
-      function updateExpand() {
-        const vh = window.innerHeight;
-        expandFrames.forEach(function (f) {
-          const r = f.getBoundingClientRect();
-          const center = r.top + r.height / 2;
-          const dist = Math.abs(center - vh / 2);
-          const max = vh * 0.85;
-          let p = 1 - dist / max;
-          if (p < 0) p = 0;
-          if (p > 1) p = 1;
-          p = p * p * (3 - 2 * p);
-          f.style.setProperty("--p", p.toFixed(3));
-        });
-      }
-      window.addEventListener("scroll", updateExpand, { passive: true });
-      window.addEventListener("resize", updateExpand);
-      updateExpand();
+  /* --- scroll-expand story: fase 1 cresce, fase 2 encolhe + frase aparece --- */
+  var expandSections = document.querySelectorAll(".expand");
+  if (expandSections.length) {
+    function sm(x) { return x * x * (3 - 2 * x); } // smoothstep ease
+
+    function updateExpandStory() {
+      expandSections.forEach(function (section) {
+        var frame  = section.querySelector(".expand__frame");
+        var phrase = section.querySelector(".expand__phrase");
+        if (!frame) return;
+
+        var rect    = section.getBoundingClientRect();
+        var scrolled = -rect.top;
+        var total    = section.offsetHeight - window.innerHeight;
+        if (total <= 0) return;
+        var p  = Math.max(0, Math.min(1, scrolled / total));
+
+        var p1  = Math.min(p * 2, 1);          // 0→1 na primeira metade
+        var p2  = Math.max((p - 0.5) * 2, 0);  // 0→1 na segunda metade
+        var ep1 = sm(p1);
+        var ep2 = sm(p2);
+
+        // Imagem: cresce 0.38→1 (fase 1), encolhe 1→0.22 e desce (fase 2)
+        var fs = p2 > 0 ? (1 - 0.78 * ep2) : (0.38 + 0.62 * ep1);
+        var fy = ep2 * 26; // vh para baixo
+        frame.style.transform =
+          "translate(-50%, calc(-50% + " + fy.toFixed(2) + "vh)) scale(" + fs.toFixed(3) + ")";
+
+        // Frase: sobe para -14vh acima do centro e cresce em opacidade
+        if (phrase) {
+          phrase.style.opacity = ep2.toFixed(3);
+          var py = 3 - ep2 * 17; // vh: começa 3vh abaixo do centro, termina 14vh acima
+          phrase.style.transform =
+            "translate(-50%, calc(-50% + " + py.toFixed(2) + "vh))";
+        }
+      });
     }
+
+    window.addEventListener("scroll", updateExpandStory, { passive: true });
+    window.addEventListener("resize", updateExpandStory);
+    updateExpandStory();
   }
 
   /* --- contact form: envio AJAX + modal de sucesso --- */
