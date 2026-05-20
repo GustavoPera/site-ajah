@@ -1316,8 +1316,8 @@ a.contact__info-value:hover { color: var(--wine); }
   pointer-events: auto;
 }
 .form-modal__box {
-  background: var(--black);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--black);
   padding: 56px 64px;
   max-width: 540px;
   width: 100%;
@@ -1353,7 +1353,7 @@ a.contact__info-value:hover { color: var(--wine); }
   font-size: clamp(28px, 3.6vw, 48px);
   letter-spacing: -0.02em;
   line-height: 1.05;
-  color: var(--cream);
+  color: var(--black);
   margin-bottom: 16px;
 }
 .form-modal__sub {
