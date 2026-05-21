@@ -1544,7 +1544,7 @@ a.contact__info-value:hover { color: var(--wine); }
   inset: 0;
   background: url('assets/logo simples preto.png') no-repeat center center;
   background-size: 55%;
-  opacity: 0.06;
+  opacity: 0.03;
   pointer-events: none;
 }
 .newsletter__form--name { margin: 0; }
