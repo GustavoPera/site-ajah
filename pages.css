@@ -1543,7 +1543,7 @@ a.contact__info-value:hover { color: var(--wine); }
   position: absolute;
   inset: 0;
   background: url('assets/logo simples preto.png') no-repeat center center;
-  background-size: 55%;
+  background-size: 30%;
   opacity: 0.03;
   pointer-events: none;
 }
