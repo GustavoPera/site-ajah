@@ -1532,6 +1532,21 @@ a.contact__info-value:hover { color: var(--wine); }
 @media (max-width: 768px) {
   .nwl-grid { grid-template-columns: 1fr; gap: 40px; margin-top: 16px; }
 }
+
+/* logo de fundo na secao de fechamento da newsletter */
+.nwl-closing {
+  position: relative;
+  overflow: hidden;
+}
+.nwl-closing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('assets/logo simples preto.png') no-repeat center center;
+  background-size: 55%;
+  opacity: 0.06;
+  pointer-events: none;
+}
 .newsletter__form--name { margin: 0; }
 .newsletter__btn {
   background: var(--wine);
