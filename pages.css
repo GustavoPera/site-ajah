@@ -1511,13 +1511,13 @@ a.contact__info-value:hover { color: var(--wine); }
 .nwl-sub strong { font-weight: 500; color: var(--cream); }
 
 /* campos mais compactos */
-[data-page="newsletter"] .newsletter__form input { padding: 10px 0; }
+[data-page="newsletter"] .newsletter__form input { padding: 0px 0; }
 
 /* placeholders itálicos e leves */
 [data-page="newsletter"] .newsletter__form input::placeholder {
   font-style: italic;
   font-weight: 400;
-  color: rgba(245,244,242,0.4);
+  color: rgba(245, 244, 242, 0.295);
 }
 
 /* aviso de consentimento */
@@ -1543,8 +1543,8 @@ a.contact__info-value:hover { color: var(--wine); }
   position: absolute;
   inset: 0;
   background: url('assets/logo simples preto.png') no-repeat center center;
-  background-size: 42%;
-  opacity: 0.03;
+  background-size: 60%;
+  opacity: 0.06;
   pointer-events: none;
 }
 .newsletter__form--name { margin: 0; }
