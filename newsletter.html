@@ -11,6 +11,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=2" />
   <link rel="stylesheet" href="pages.css?v=2" />
+  <style>
+    /* MailerLite — overrides para combinar com o design Ajah */
+    #mlb2-41654314.ml-form-embedContainer { display: block !important; }
+    #mlb2-41654314.ml-form-embedContainer .ml-form-embedWrapper,
+    #mlb2-41654314.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+      background-color: transparent !important;
+      border: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    #mlb2-41654314 .ml-form-embedBody { padding: 0 !important; }
+    #mlb2-41654314 .ml-form-embedContent { display: none !important; }
+    #mlb2-41654314 .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: transparent !important;
+      color: var(--cream) !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(173,159,130,0.4) !important;
+      border-radius: 0 !important;
+      font-family: var(--sans) !important;
+      font-size: 17px !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      padding: 10px 0 !important;
+    }
+    #mlb2-41654314 .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+      color: rgba(245,244,242,0.4) !important;
+      font-style: italic !important;
+    }
+    #mlb2-41654314 .ml-form-embedBody .ml-form-fieldRow { margin: 0 !important; }
+    #mlb2-41654314 .ml-form-embedSubmit {
+      margin: 28px 0 0 !important;
+      float: none !important;
+    }
+    #mlb2-41654314 .ml-form-embedSubmit button.primary {
+      background-color: var(--wine) !important;
+      border-radius: 0 !important;
+      font-family: var(--sans) !important;
+      font-size: 12px !important;
+      letter-spacing: 0.3em !important;
+      text-transform: uppercase !important;
+      padding: 18px 48px !important;
+      width: auto !important;
+      display: inline-block !important;
+    }
+    #mlb2-41654314 .ml-form-embedSubmit button.primary:hover {
+      background-color: var(--cream) !important;
+      color: var(--black) !important;
+    }
+    #mlb2-41654314 .ml-form-successContent h4 {
+      color: var(--cream) !important;
+      font-family: var(--serif) !important;
+      font-size: 28px !important;
+    }
+    #mlb2-41654314 .ml-form-successContent p {
+      color: rgba(245,244,242,0.7) !important;
+    }
+    #mlb2-41654314 .ml-form-embedBody.row-form { padding: 0 !important; }
+    #mlb2-41654314 .ml-form-embedBody .ml-form-formContent { margin: 0 !important; }
+    #mlb2-41654314 .ml-block-form label { display: none !important; }
+  </style>
 </head>
 <body data-page="newsletter">
 
@@ -62,16 +122,45 @@
         <!-- coluna direita: texto + formulário -->
         <div class="nwl-grid__form fade-up">
           <p class="nwl-sub">Toda <strong>segunda-feira</strong> você recebe um conteúdo exclusivo sobre branding, marketing, negócios e o que move marcas que constroem comunidades reais.</p>
-          <form class="newsletter__form-wrap" action="#" method="post" name="newsletter">
-            <div class="newsletter__form newsletter__form--name">
-              <input type="text" name="nome" placeholder="Seu nome ou organização *" required aria-label="Nome" />
+          <div id="mlb2-41654314" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41654314">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent" style="display:none"></div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2366685/forms/188174179079554580/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-name">
+                          <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="Seu nome ou organização *" autocomplete="given-name">
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="seu@email.com *" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <p class="nwl-consent" style="margin:16px 0 0;">Ao se inscrever, você concorda em compartilhar seus dados com os canais de comunicação da Ajah Brand Club.</p>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">Quero receber →</button>
+                      <button disabled="disabled" style="display:none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Enviando...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display:none">
+                  <div class="ml-form-successContent">
+                    <h4>Inscrição confirmada.</h4>
+                    <p>Toda sexta-feira, seu conteúdo chega direto no email.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="newsletter__form">
-              <input type="email" name="email" placeholder="seu@email.com *" required aria-label="Email" />
-            </div>
-            <p class="nwl-consent">Ao se inscrever, você concorda em compartilhar seus dados com os canais de comunicação da Ajah Brand Club.</p>
-            <button class="newsletter__btn" type="submit">Quero receber <span aria-hidden="true">→</span></button>
-          </form>
+          </div>
          </div>
       </div>
     </section>
@@ -123,5 +212,14 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function ml_webform_success_41654314() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-41654314 .row-success').show();
+      $('.ml-subscribe-form-41654314 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/2366685/forms/188174179079554580/takel")</script>
 </body>
 </html>
