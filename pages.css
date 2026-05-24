@@ -666,7 +666,7 @@
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: #8a8a8a;
   margin-bottom: 28px;
 }
 .page-hero__crumbs .sep { color: var(--gold); }
@@ -685,7 +685,7 @@
   margin-top: 26px;
   font-size: clamp(16px, 1.4vw, 20px);
   line-height: 1.6;
-  color: var(--gray);
+  color: #8a8a8a;
   max-width: 56ch;
 }
 .page-hero__bg-num {
