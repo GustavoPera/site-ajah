@@ -77,10 +77,7 @@
   color: var(--gold);
 }
 .hero__label::before {
-  content: "";
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
+  content: none;
 }
 .hero__headline {
   font-family: var(--serif);
@@ -188,7 +185,7 @@
 .expand {
   position: relative;
   background: var(--black);
-  padding: clamp(60px, 10vw, 120px) 0;
+  padding: clamp(36px, 5vw, 72px) 0;
   overflow: hidden;
 }
 .expand__frame {
@@ -350,7 +347,7 @@
 
 /* ---------------- TWO COLUMN STATEMENT BLOCK ---------------- */
 .statement {
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .statement__grid {
   display: grid;
@@ -522,7 +519,7 @@
 
 /* ---------------- SERVICES PREVIEW (home) ---------------- */
 .services-preview {
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .services-preview__head {
   display: flex;
@@ -601,7 +598,7 @@
 
 /* ---------------- BIG QUOTE BLOCK ---------------- */
 .big-quote {
-  padding: clamp(80px, 10vw, 140px) 0;
+  padding: clamp(48px, 6vw, 96px) 0;
   text-align: center;
 }
 .big-quote__text {
@@ -650,7 +647,7 @@
 
 /* ---------------- CASES PREVIEW ---------------- */
 .cases-preview {
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .cases-preview__head {
   display: flex;
@@ -753,7 +750,7 @@
 .page-hero {
   background: var(--black);
   color: var(--cream);
-  padding: calc(var(--header-h) + 80px) 0 clamp(80px, 12vw, 160px);
+  padding: calc(var(--header-h) + 48px) 0 clamp(48px, 7vw, 96px);
   position: relative;
   overflow: hidden;
 }
@@ -804,7 +801,7 @@
    QUEM SOMOS — manifesto, propósito, diferenciais
    ============================================================ */
 .manifesto {
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
   background: var(--black);
 }
 .manifesto__grid {
@@ -854,7 +851,7 @@
 }
 
 .purpose {
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
   background: var(--cream);
   color: var(--black);
   position: relative;
@@ -894,7 +891,7 @@
 .purpose__statement em { font-style: italic; font-weight: 900; color: var(--wine); }
 
 .differentials {
-  padding: clamp(60px, 8vw, 120px) 0 clamp(100px, 14vw, 160px);
+  padding: clamp(36px, 5vw, 72px) 0 clamp(60px, 8vw, 96px);
   background: var(--cream);
   color: var(--black);
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -945,7 +942,7 @@
    ============================================================ */
 .svc-list {
   background: var(--black);
-  padding: 20px 0 clamp(80px, 10vw, 120px);
+  padding: 12px 0 clamp(48px, 6vw, 72px);
 }
 .svc-list__wrap { max-width: 1280px; margin: 0 auto; padding: 0 36px; }
 .svc {
@@ -1022,7 +1019,7 @@
 .ideal {
   background: var(--cream);
   color: var(--black);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .ideal__grid {
   display: grid;
@@ -1044,7 +1041,7 @@
 .pains {
   background: var(--cream);
   color: var(--black);
-  padding: clamp(60px, 8vw, 100px) 0 clamp(100px, 14vw, 160px);
+  padding: clamp(36px, 5vw, 60px) 0 clamp(60px, 8vw, 96px);
 }
 .pains__wrap { max-width: 1280px; margin: 0 auto; padding: 0 36px; }
 .pains__head {
@@ -1101,7 +1098,7 @@
 .not-for {
   background: var(--black);
   color: var(--cream);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .not-for__wrap {
   max-width: 980px;
@@ -1141,7 +1138,7 @@
    CASES PAGE
    ============================================================ */
 .case {
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
   position: relative;
 }
 .case__wrap { max-width: 1280px; margin: 0 auto; padding: 0 36px; }
@@ -1389,7 +1386,7 @@
 .contact {
   background: var(--cream);
   color: var(--black);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .contact__grid {
   display: grid;
@@ -1564,7 +1561,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .newsletter {
   background: var(--black);
   color: var(--cream);
-  padding: clamp(60px, 8vw, 100px) 0 clamp(100px, 14vw, 160px);
+  padding: clamp(36px, 5vw, 60px) 0 clamp(60px, 8vw, 96px);
 }
 .newsletter__wrap {
   max-width: 720px;
@@ -1581,7 +1578,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .newsletter__form-wrap { display: flex; flex-direction: column; gap: 0; margin: 32px 0 18px; }
 
 /* newsletter page — centralizar textos e reduzir espaçamentos */
-[data-page="newsletter"] .page-hero { padding-bottom: clamp(80px, 10vw, 140px); }
+[data-page="newsletter"] .page-hero { padding-bottom: clamp(48px, 6vw, 96px); }
 [data-page="newsletter"] .page-hero__crumbs { margin-bottom: 32px; }
 [data-page="newsletter"] .page-hero__headline { font-size: clamp(48px, 7vw, 110px); }
 [data-page="newsletter"] .newsletter__form-wrap { margin: 0 0 16px; }
@@ -1749,7 +1746,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .svc-detail-hero {
   background: var(--black);
   color: var(--cream);
-  padding: calc(var(--header-h) + 100px) 0 clamp(80px, 12vw, 160px);
+  padding: calc(var(--header-h) + 60px) 0 clamp(48px, 7vw, 96px);
   position: relative;
   overflow: hidden;
 }
@@ -1832,7 +1829,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .svc-narrative {
   background: var(--cream);
   color: var(--black);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .svc-narrative__wrap {
   max-width: 980px;
@@ -1877,7 +1874,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .svc-shift {
   background: var(--cream);
   color: var(--black);
-  padding: clamp(20px, 4vw, 60px) 0 clamp(80px, 12vw, 140px);
+  padding: clamp(12px, 2vw, 36px) 0 clamp(48px, 7vw, 96px);
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 .svc-shift__wrap {
@@ -1923,7 +1920,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .svc-deliver {
   background: var(--black);
   color: var(--cream);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
 }
 .svc-deliver__wrap {
   max-width: 1180px;
@@ -1984,7 +1981,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .svc-cta {
   background: var(--wine);
   color: var(--cream);
-  padding: clamp(80px, 12vw, 140px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
   text-align: center;
 }
 .svc-cta__wrap {
@@ -2041,7 +2038,7 @@ a.contact__info-value:hover { color: var(--wine); }
 .conceito-hero {
   background: var(--black);
   color: var(--cream);
-  padding: calc(var(--header-h) + 100px) 0 clamp(80px, 12vw, 140px);
+  padding: calc(var(--header-h) + 60px) 0 clamp(48px, 7vw, 96px);
 }
 .conceito-hero__wrap { max-width: 1280px; margin: 0 auto; padding: 0 36px; }
 .conceito-hero__crumbs {
@@ -2076,7 +2073,7 @@ a.contact__info-value:hover { color: var(--wine); }
 
 .gallery {
   background: var(--black);
-  padding: clamp(60px, 8vw, 120px) 0;
+  padding: clamp(36px, 5vw, 72px) 0;
 }
 .gallery__wrap {
   max-width: 1280px;
@@ -2193,7 +2190,7 @@ a.contact__info-value:hover { color: var(--wine); }
 
 .conceito-closing {
   background: var(--black);
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(48px, 7vw, 96px) 0;
   text-align: center;
 }
 .conceito-closing p {

@@ -321,11 +321,7 @@ main { display: block; }
   color: var(--gold);
 }
 .eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 26px;
-  height: 1px;
-  background: currentColor;
+  content: none;
 }
 
 .h-display {
