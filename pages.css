@@ -377,6 +377,96 @@
   .statement__image figcaption { flex-direction: column; align-items: flex-start !important; gap: 6px !important; }
 }
 
+/* ---------------- O CLUBE (home) ---------------- */
+.o-clube__inner {
+  text-align: center;
+}
+.o-clube__inner .eyebrow {
+  color: var(--wine);
+  display: block;
+  margin-bottom: 24px;
+}
+.o-clube__inner .h-2 {
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: clamp(40px, 6.5vw, 96px);
+}
+.o-clube__body {
+  max-width: 90%;
+  margin: 36px auto 0;
+}
+.o-clube__body p {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.6;
+  color: var(--black);
+}
+.o-clube__body p + p {
+  margin-top: 20px;
+}
+.o-clube__body p:last-child {
+  font-size: clamp(24px, 2.8vw, 40px);
+}
+.o-clube__inner .section-cta {
+  margin-top: 40px;
+  display: inline-flex;
+}
+
+/* ---------------- STATEMENT AJAH (home) ---------------- */
+.statement-ajah__head {
+  max-width: 90%;
+}
+.statement-ajah__head .h-2 {
+  font-size: clamp(38px, 6vw, 75px);
+}
+.statement-ajah__head .eyebrow {
+  color: var(--wine);
+  margin-bottom: 32px;
+}
+.statement-ajah__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.statement-ajah__img {
+  margin: 0;
+}
+.statement-ajah__right {
+  padding: 0;
+  margin: 0;
+}
+.statement-ajah__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.statement-ajah__right .section-cta {
+  display: inline-flex;
+  margin-top: 40px;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+.statement-ajah__sub {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 40px);
+  line-height: 1.3;
+  color: var(--black);
+  margin-top: -0.15em;
+}
+.statement-ajah__sub .highlight {
+  color: var(--wine);
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .statement-ajah__head { max-width: 100%; }
+  .statement-ajah__bottom { grid-template-columns: 1fr; }
+}
+
 .statement__image {
   margin: 40px 0 0;
   position: relative;
@@ -511,7 +601,7 @@
 
 /* ---------------- BIG QUOTE BLOCK ---------------- */
 .big-quote {
-  padding: clamp(120px, 18vw, 220px) 0;
+  padding: clamp(80px, 10vw, 140px) 0;
   text-align: center;
 }
 .big-quote__text {
@@ -550,6 +640,13 @@
   transition: gap 200ms var(--ease);
 }
 .big-quote__cta:hover { gap: 22px; }
+.big-quote__sub {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(18px, 1.8vw, 26px);
+  color: var(--gray);
+  margin-top: 20px;
+}
 
 /* ---------------- CASES PREVIEW ---------------- */
 .cases-preview {
