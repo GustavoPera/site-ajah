@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=2" />
   <link rel="stylesheet" href="pages.css?v=2" />
+  <style>
+    #conceito-cta {
+      transition: background 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+    }
+    #conceito-cta:hover {
+      background: var(--wine) !important;
+      color: var(--cream) !important;
+      letter-spacing: 0.04em;
+    }
+  </style>
 </head>
 <body data-page="conceito">
   <header class="site-header" aria-label="Cabeçalho">
@@ -51,8 +61,8 @@
         <div class="conceito-hero__crumbs fade-up">
           <a href="index.html">Início</a><span class="sep">/</span><span class="here">Ajah Conceito</span>
         </div>
-        <h1 class="conceito-hero__head fade-up">Uma marca não é o que você vende. É o <em>universo</em> que você constrói.</h1>
-        <p class="conceito-hero__sub fade-up">Antes de pregar o que acreditamos, vivemos. Esta é a Ajah em universos onde marca vira cultura.</p>
+        <h1 class="conceito-hero__head fade-up">Marca que vira <em style="font-style:italic;color:var(--wine);">cultura</em> não se explica. Se sente.</h1>
+        <p class="conceito-hero__sub fade-up">Nove universos. Nove formas de enxergar o que marca pode ser quando vai além do produto.</p>
       </div>
     </section>
 
@@ -137,6 +147,8 @@
 
     <section class="conceito-closing" aria-label="Frase de fechamento">
       <p class="fade-up">O óbvio já tem <em>dono.</em></p>
+      <p class="fade-up" style="font-size:clamp(18px,2vw,28px);font-weight:400;font-style:normal;margin-top:56px;letter-spacing:0.01em;max-width:none;white-space:nowrap;">Ocupe o espaço que só você pode ocupar.</p>
+      <a id="conceito-cta" href="contato.html" class="fade-up" style="display:inline-block;background:var(--cream);color:var(--wine);font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(18px,2vw,28px);padding:10px 24px;white-space:nowrap;margin-top:32px;">A conversa começa aqui</a>
     </section>
 
   </main>
